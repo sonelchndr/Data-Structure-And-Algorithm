@@ -6,8 +6,8 @@ public class factorial {
 		else{
 
 
-		int smallAns=fact(n-1);
-		return n*smallAns;
+		int a=fact(n-1);
+		return n*a;
 		}
 		}
 		public static void main(String[] args) {
