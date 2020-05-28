@@ -1,0 +1,22 @@
+public class SumOFArray {
+	
+
+		public static int sumOfArray(int n,int input[]) {
+	        if(n<=1)
+	        {
+	            return input[0];
+	        }
+	        int temp[]=new int[input.length-1];
+	        for(int i=1;i<input.length;i++)
+	            temp[i-1]=input[i];
+	        int smallAnswer=sumOfArray(n-1,temp);
+	        return n+smallAnswer;
+}
+		public static void main(String[] args)
+		{
+			int n=4;
+			int input[]= {2,3,4,5};
+			
+			System.out.println(sumOfArray(n,input));
+		}
+}
