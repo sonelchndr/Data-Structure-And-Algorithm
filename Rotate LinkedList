@@ -1,0 +1,80 @@
+package linkedlist;
+
+public class LL {
+	
+
+		 static Node head;
+		static  class Node
+		 {
+			int data;
+			Node next;
+			Node(int d)
+			{
+				data=d;
+				next=null;
+			}
+		 }
+		 
+		void  rotate(int k)
+		   {
+		      if(k==0)
+		    	  return;
+		      Node current=head;
+		      int count=1;
+		      while(count<k && current!=null)
+		      {
+		    	  current=current.next;
+		    	  count++;
+		      }
+		      
+		        if(current==null)
+		        	return;
+		        
+		        Node temp=current; 
+		         
+		        while(current.next!=null)
+		        current=current.next;
+		        current.next=head;
+		        head=temp.next;
+		        temp.next=null;
+		   }
+		 public void push(int new_data)
+		   {
+			   Node new_node=new Node(new_data);
+			   new_node.next=head;
+			   head =new_node;
+		   }
+		 
+		 
+		 
+		 
+		 public void printList()
+		 {
+			 Node n=head;
+			 while(n!=null)
+			 {
+				 System.out.println(n.data+" ");
+				 n=n.next;
+			 }
+		 }
+
+		public static void main(String[] args) {
+			LL llist=new LL();
+			llist.push(30);
+			llist.push(20);
+			llist.push(10);
+			llist.push(5);
+			llist.printList();
+			
+			llist.rotate(2);
+			
+			llist.printList();
+			
+		}
+
+	}
+
+
+	
+
+
