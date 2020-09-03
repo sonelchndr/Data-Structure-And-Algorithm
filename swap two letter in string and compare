@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define fi first
+#define se second
+#define fo(i,n) for(int i=0;i<n;i++)
+#define ll long long
+#define db1(x) cout << #x << "=" << x << endl
+#define db2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
+#define db3(x, y, z) cout << #x << "=" << x << "," << #y << "=" << y << "," << #z << "=" << z << endl
+
+  int main()
+    {
+
+         char s1[100001],s2[100002];
+         cin>>s1>>s2;
+         int l1,l2;
+        l1=strlen(s1);
+        l2=strlen(s2);
+        int j=0;int count =0;
+        char a[2],b[2];
+        if(l1!=l2)
+       {
+        cout<<"NO"<<endl;
+        return 0;
+      }
+      for(int i=0;i<l1;i++)
+      {
+          if(s1[i]!=s2[i])
+          {
+           count++;
+           a[j]=s1[i];
+           b[j]=s2[i];
+                j++;
+          if(count>2)
+          {
+            cout<<"NO"<<endl;
+           return 0;
+      }
+
+        }
+      }
+   if(a[1]==b[0]&&a[0]==b[1])
+   {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+
+    }    
