@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define fi first
+#define se second
+#define fo(i,n) for(int i=0;i<n;i++)
+#define ll long long
+#define ld long double
+#define db1(x) cout << #x << "=" << x << endl
+#define db2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
+#define db3(x, y, z) cout << #x << "=" << x << "," << #y << "=" << y << "," << #z << "=" << z << endl
+int MOD = 1000000007;
+
+vector<int> adj[10];
+
+int main()
+{
+ 
+  int x, y, nodes, edges;
+            
+        cin>>nodes;
+
+        cin >> edges;
+        for(int i=0;i<edges;i++)
+        {
+            cin>>x>>y;
+            adj[x].push_back(y);
+        }
+
+   for(int i = 1;i <= nodes;++i)
+    {   
+            cout << "Adjacency list of node " << i << ": ";
+        for(int j = 0;j < adj[i].size();++j)
+            {
+            if(j == adj[i].size() - 1)
+                    cout << adj[i][j] << endl;
+            else
+                cout << adj[i][j] << " --> ";
+    }
+    
+    
+    }
+}
